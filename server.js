@@ -5,7 +5,6 @@ const passportConfig = require("./lib/passportConfig");
 const cors = require("cors");
 const fs = require("fs");
 const env = require('dotenv').config();
-const PORT=process.env.PORT || 4444;
 // MongoDB
 mongoose
   .connect(process.env.DATABASE, {
@@ -29,7 +28,7 @@ if (!fs.existsSync("./public/profile")) {
 }
 
 const app = express();
-const port = 4444;
+const port = process.env.port||4444;
 
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
