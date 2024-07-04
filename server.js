@@ -5,7 +5,7 @@ const passportConfig = require("./lib/passportConfig");
 const cors = require("cors");
 const fs = require("fs");
 const env = require('dotenv').config();
-
+const PORT=process.env.PORT || 4444;
 // MongoDB
 mongoose
   .connect(process.env.DATABASE, {
